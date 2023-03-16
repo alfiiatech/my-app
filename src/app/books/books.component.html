@@ -1,4 +1,4 @@
-<p>book List!</p>
+<p>List of Books!</p>
 
 <!-- <button (click)="isShowing = !isShowing">
     <ng-container *ngIf="!isShowing">Show Books</ng-container>
@@ -7,7 +7,7 @@
 
 <ul *ngIf="isShowing">
     <ng-container *ngFor="let singleBook of books ; let i = index ">
-       <app-book (bookEmitter)="addToCart($event)" [book] = "singleBook"></app-book>
+       <app-book [book] = "singleBook"></app-book>
     </ng-container>
 
 </ul>

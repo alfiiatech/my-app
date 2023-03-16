@@ -19,7 +19,7 @@ export class BooksComponent implements OnInit {
 
   constructor(private booksService: BooksService) { }
 
-  cart: Book[] = [];
+  // cart: Book[] = [];
 
   isShowing: boolean = true;
 
@@ -29,8 +29,8 @@ export class BooksComponent implements OnInit {
     // console.log({OnInIt:"On In It"})
   }
 
-  addToCart(book: Book) {
-    console.log(book)
-  }
+  // addToCart(book: Book) {
+  //   console.log(book)
+  // }
 
 }

@@ -1,0 +1,58 @@
+<div class="flex items-center justify-center">
+    <form class="bg-stone-400 p-8 rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold mb-6 text-white text-center">Register</h2>
+        <form (ngSubmit)="register()" #myForm="ngForm" class="max-w-md">
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="name">Name:</label>
+                <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="text" id="name" name="name" placeholder="name" [(ngModel)]="form.name" #name="ngModel"
+                    required>
+            </div>
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+                This field can't be empty
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="email">Email:</label>
+                <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="email" id="email" name="email" placeholder="email" [(ngModel)]="form.email" #email="ngModel"
+                    required>
+
+            </div>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+                This field can't be empty
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="password">Password:</label>
+                <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="password" id="password" minlength="6" name="password" placeholder="password" [(ngModel)]="form.password"
+                    #password="ngModel" required>
+            </div>
+            <div *ngIf="password.invalid  && (password.dirty || password.touched)" class="p-2 bg-red-300 text-red-800 rounded">
+               Password must be 6 characters
+            </div>
+            <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="password"> Confirm Password:</label>
+                <input
+                    class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    type="password" id="password" minlength="6" name="password" placeholder="confirm password"
+                    [(ngModel)]="form.confirmpassword" #confirmpassword="ngModel" required /><br>
+
+                <div *ngIf="confirmpassword.invalid && (confirmpassword.touched || confirmpassword.dirty)" class="p-2 bg-red-300 text-red-800 rounded">
+                    This field can't be empty
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                <button
+                    class="bg-white hover:bg-gray-100 text-stone-500 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                    type="submit"
+                    [disabled]="myForm.form.invalid">
+                    Register
+                </button>
+            </div>
+        </form>
+    </form>
+</div>
